@@ -34,11 +34,12 @@ public class InnoProject {
                 sc.add(s.substring(1));
             }
             if (s.charAt(0) == '*') {
-                sc1.add(s.substring(1));
+                sc1.add(s.substring(1,2));
             }
 
         }
         in.close();
+
         int l = 0;
         for (int i = 0; i < k; i++) {
             if (i < (x - 1)) {
@@ -85,10 +86,12 @@ public class InnoProject {
                     j++;
                     if (t > 1) {
                         j = j - t;
+
                     }
                     if (j == 2) {
                         j = 0;
                         i++;
+
                     }
                 } else {
                     j++;
@@ -108,6 +111,7 @@ public class InnoProject {
                 j++;
                 t++;
                 br--;
+
             }
             br++;
         }
