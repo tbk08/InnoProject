@@ -130,7 +130,6 @@ public class NewTen {
 
 
         ArrayList<String> sorted = new ArrayList();
-
         int breaking = 0;
         String check = "";
         int temp = 1;
@@ -148,8 +147,7 @@ public class NewTen {
                         iForLevel++;
                         iForQuestion = 0;
                         stop = 1;
-                    }
-                    else if (temp == 1 && stop == 1) {
+                    } else if (temp == 1 && stop == 1) {
                         iForQuestion++;
                         temp++;
                     } else if (temp == 2 && stop == 1) {
