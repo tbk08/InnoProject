@@ -13,11 +13,9 @@ public class Answer {
     public String toString() {
         return text;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Answer) {
-            System.out.println("This an answer");
             String s = ((Answer) obj).getText();
             return this.text.equals(s);
         }

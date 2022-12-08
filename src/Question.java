@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Question {
     private final String text;
     private final int level;
@@ -35,6 +33,12 @@ public class Question {
     public String toString() {
         return text;
     }
+//    @Override
+//    public boolean equals(Object obj) {
+//        String s = getTrueAnswer().getText();
+//        String s1 = String.valueOf(obj);
+//        return s1.equals(s);
+//    }
 
 
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static <ObjectMapper> void main(String[] args) {
+    public static void main(String[] args) {
         Answer[] answerQuestion1 = new Answer[4];
         answerQuestion1[0] = new Answer("Answer 1");
         answerQuestion1[1] = new Answer("Answer 1");
@@ -345,24 +345,29 @@ public class Main {
         questions[8][2] = new Question("Question54", 9, answerQuestion54, answerQuestion54[0]);
         questions[9] = new Question[1];
         questions[8][1] = new Question("Question55", 10, answerQuestion55, answerQuestion55[0]);
+
+//        String check = "Answer 1";
+//        Answer answer = new Answer(check);
+//        System.out.println(questions[0][0].getTrueAnswer().equals(answer));
+
+        int level = 10;// кол-во уровней сложности
+        int x = 5;// средний уровень сложности
         Scanner scanner = new Scanner(System.in);
-        int level=10;
-        int x=5;
-        ArrayList<String> usedQuestions = new ArrayList();
+        ArrayList<String> sorted = new ArrayList();
         int breaking = 0;
-        String check = "";
+        String check;
         int temp = 1;
         int iForQuestion = 0;
         int iForLevel = x - 1;
         int stop = 0;
         while (breaking != level) {
-            if (!usedQuestions.contains(questions[iForLevel][iForQuestion].getText())) {
-                usedQuestions.add(questions[iForLevel][iForQuestion].getText());
+            if (!sorted.contains(questions[iForLevel][iForQuestion].getText())) {
+                sorted.add(questions[iForLevel][iForQuestion].getText());
                 System.out.println(questions[iForLevel][iForQuestion].getText());
-                check = scanner.next();
-                // заменить метод equals так как я не могу сравнивать String и объект
-                if (check.equals(questions[iForLevel][iForQuestion].getTrueAnswer())) {
-                    if (iForLevel == 4 && stop == 0) {
+                check = scanner.nextLine();
+                Answer answer = new Answer(check);
+                if (questions[iForLevel][iForQuestion].getTrueAnswer().equals(answer)) {
+                     if (iForLevel == 4 && stop == 0) {
                         temp = 1;
                         iForLevel++;
                         iForQuestion = 0;
@@ -397,6 +402,5 @@ public class Main {
                 iForQuestion++;
             }
         }
-
     }
 }
